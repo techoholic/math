@@ -2,7 +2,7 @@ import math
 total = 0
 addQ = ""
 mode = ""
-while (mode != "a" || mode != "b")
+while (mode != "a" or mode != "b")
     print("Welcome to my math calculator!")
     print("a. Distance Formula\nb. Triangular Area Finder")
     mode = input("Which calc would you like to use? ")
