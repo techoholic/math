@@ -2,7 +2,7 @@
 import math
 total = 0 #Var used to store the aggregated distance values of lines
 clearTotal = "" #If this is set to anything but '', the total value will be reset
-print("Welcome to version 3.0 of my math calculator!")
+print("Welcome to version 3.1 of my math calculator!")
 print("a. Distance Formula/Perimeter Finder\nb. Area Finder\nc. Midpoint Finder")
 mode = input("Which calc would you like to use?\n(type 'a', 'b', or 'c' and then press Enter): ")
 while (mode != 'a' and mode != 'A' and mode != 'b' and mode != 'B' and mode != 'c' and mode != 'C'):
@@ -97,7 +97,7 @@ while True:
     elif (sides == "4"):
       print("\nArea: ", (base * height))
   while (mode == 'c' or mode == 'C'):
-    print("\ne. Calculate midpoint with two endpoints\nf. Calculate endpoint with the midpoint and on endpoint")
+    print("\ne. Calculate midpoint with two endpoints\nf. Calculate endpoint with the midpoint and an endpoint")
     midpointMode = ''
     while (midpointMode != 'e' and midpointMode != 'E' and midpointMode != 'f' and midpointMode != 'F'):
       midpointMode = input("Type 'e' or 'f' and press enter to choose mode: ")
@@ -131,15 +131,20 @@ while True:
     if (midpointMode == 'e' or midpointMode == 'E'):
       midpointX = (x1 + x2)/2
       midpointY = (y1 + y2)/2
+      print("\n >>> Midpoint: (", midpointX, ", ", midpointY, ") <<<", sep='')
     else:
       if (x1 < x2):
         midpointX = x2 + math.fabs(x1-x2)
       elif (x1 > x2):
         midpointX = x1 - x2
+      else:
+        midpointX = 0.0
 
       if (y1 < y2):
         midpointY = y2 + math.fabs(y1-y2)
       elif (y1 > y2):
         midpointY = y1 - y2
-    print("Midpoint: (", midpointX, ",", midpointY, ")")
+      else:
+        midpointY = 0.0
+      print("\n >>> Endpoint B: (", midpointX, ", ", midpointY, ") <<<", sep='')
     #What if y1 and y2 are equal????
